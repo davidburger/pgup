@@ -6,7 +6,7 @@
 
 return [
     'default_environment' => 'development',
-    'log_dir' => 'data/log/dbup/',
+    'log_dir' => 'data/log/pgup/', // psql output log destination (including database errors, warns and notices)
     'sync_mode' => 'database', //filesystem or database
     'sync_table' => 'migration.migration',
     'environments' => [
