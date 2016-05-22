@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Primitive PHP Db migration tool for Postgres
+ * @author David Burger
+ */
+
+try {
+    
+    require_once __DIR__ . '/src/autoload.php';
+    
+    $app = new PgUp\Migrator($argv);
+    $app->run();
+
+    exit(0);
+
+} catch(\Exception $e) {
+    echo (string)$e;
+
+    exit(1);
+}

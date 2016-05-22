@@ -1,0 +1,31 @@
+{
+  "name": "davidburger/pgup",
+  "description": "PHP PostgreSQL database migration tool",
+  "type": "library",
+  "keywords": [
+    "postgres", "PostgreSQL", "database", "migration"
+  ],
+  "homepage": "https://github.com/davidburger/pgup",
+  "license": "Apache-2.0",
+  "support": {
+    "source": "https://github.com/davidburger/pgup",
+    "issues": "https://github.com/davidburger/pgup/issues"
+  },
+  "authors": [
+    {
+      "name": "David Burger",
+      "email": "david.burger.gm@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "bin": [
+    "pgup"
+  ],
+  "autoload": {
+    "psr-4": {
+      "PgUp\\": "src/"
+    }
+  }
+}

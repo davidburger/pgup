@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * DbUp migration config
+ */
+
+return [
+    'default_environment' => 'development',
+    'log_dir' => 'data/log/dbup/',
+    'sync_mode' => 'database', //filesystem or database
+    'sync_table' => 'migration.migration',
+    'environments' => [
+        'development' => [
+            'host' => '', //fill your credentials (password will be stored in  ~/.pgpass - see http://www.postgresql.org/docs/9.5/interactive/libpq-pgpass.html)
+            'user' => '',
+            'password' => '',
+            'port' => 5432,
+            'database' => ''
+        ],
+        'testing' => [
+            'host' => '',
+            'user' => '',
+            'password' => '',
+            'port' => 5432,
+            'database' => ''
+        ]
+    ]
+];
