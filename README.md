@@ -6,7 +6,7 @@ Useful for synchronization of database changes within development team.
  
 ## Installation
 ```sh
-composer require davidburger/pgup:dev-master 
+composer require davidburger/pgup
 ```
 
 ## Prerequisities
