@@ -67,14 +67,13 @@ class Migrator
     {
         $this->projectDir = realpath(__DIR__ . '/../../../../'); //supposed composer usage
 
-        $this->arguments = $this->checkArgs($arguments);
-
         $this->configFactory = ConfigFactory::fromProjectDir($this->projectDir);
         if (!$this->isInitialized()) {
             $this->initMigrations();
         }
 
         $this->config = $this->configFactory->create();
+        $this->arguments = $this->checkArgs($arguments);
     }
 
     /**
