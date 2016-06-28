@@ -87,6 +87,8 @@ class Migrator
         $arguments = [];
         array_walk($args, function($a) use(&$arguments) {
 
+            $value = null;
+
             $name = $a;
             if (strpos($a, '=')) {
                 list($name, $value) = explode('=', $a, 2);
@@ -103,6 +105,13 @@ class Migrator
                     break;
 
                 case '--comment':
+
+                    if (true === empty($value)) {
+                        throw new InvalidArgumentException(
+                            sprintf('Undefined attribute `%s` value', $name)
+                        );
+                    }
+
                     $arguments['comment'] = $value;
                     break;
 
@@ -197,7 +206,7 @@ class Migrator
 
         $this->consoleOutput('New migration file ' . $path . ' created.')
              ->consoleOutput('Please edit it and run migration with command:')
-             ->consoleOutput(' `$ composer dbup`' . PHP_EOL);
+             ->consoleOutput(' `$ composer pgup`' . PHP_EOL);
 
         return $this;
     }
